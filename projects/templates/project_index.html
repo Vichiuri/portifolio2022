@@ -1,12 +1,29 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_content %}
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Hi! i'm Victor Chiuri</h1>
+        <p class="lead text-muted">Hey i am Victor Chiuri. I am from Nairobi, Kenya. I am a Full Stack Web
+            Developer</p>
+        <p>
+            <a href="mailto:chiuri.vic@gmail.com" class="btn btn-primary my-2">Email me</a>
+        </p>
+        <img src="{% static 'vic.jpg' %}" class="img-fluid img-thumbnail" alt="image" height="200px" width="300px">
+    </div>
+</section>
+
+
+
 <h1>Projects</h1>
 <div class="row">
+
+    
 {% for project in projects %}
     <div class="col-md-4">
         <div class="card mb-2">
-            <img class="card-img-top" src="{% static project.image %}">
+            <img class="card-img-top"  src=  "{{ project.image.url }}">
             <div class="card-body">
                 <h5 class="card-title">{{ project.title }}</h5>
                 <p class="card-text">{{ project.description }}</p>
